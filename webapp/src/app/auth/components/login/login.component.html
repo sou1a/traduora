@@ -4,11 +4,11 @@
     <div class="card-body">
       <div *ngIf="(errorMessage$ | async) as errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
 
-      <h4 class="card-title font-serif" >Sign in</h4>
+      <h4 class="card-title font-serif" >登录</h4>
 
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
-          <label for="emailInput" >Email address</label>
+          <label for="emailInput" >邮箱地址</label>
           <input
             id="emailInput"
             class="form-control"
@@ -20,13 +20,13 @@
           />
 
           <div class="invalid-feedback">
-            <div *ngIf="email.getError('required')" >Email is required.</div>
-            <div *ngIf="email.getError('email')" >Must be a valid email</div>
+            <div *ngIf="email.getError('required')" >邮箱地址为必填项。</div>
+            <div *ngIf="email.getError('email')" >请输入有效的邮箱地址。</div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="passwordInput" >Password</label>
+          <label for="passwordInput" >密码</label>
           <input
             id="passwordInput"
             class="form-control"
@@ -38,12 +38,12 @@
           />
 
           <div class="invalid-feedback">
-            <div *ngIf="password.getError('required')" >Password is required.</div>
-            <div *ngIf="password.getError('minlength')" >Password must be at least 8 characters.</div>
+            <div *ngIf="password.getError('required')" >密码为必填项。</div>
+            <div *ngIf="password.getError('minlength')" >密码长度最小为8位。</div>
           </div>
         </div>
 
-        <button class="btn btn-primary w-100" type="submit" [disabled]="!loginForm.valid || (isLoading$ | async)" >Sign in</button>
+        <button class="btn btn-primary w-100" type="submit" [disabled]="!loginForm.valid || (isLoading$ | async)" >登录</button>
       </form>
 
       <div class="text-center border-top mt-5">
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="text-center mt-3">
-    <p class="text-sm my-0">Don't have an account? <a class="text-sm btn btn-link p-0" routerLink="/signup" >Sign up</a></p>
-    <a class="btn btn-link text-sm my-0" routerLink="/forgot-password" >Forgot your password?</a>
+    <p class="text-sm my-0">还没有账号？<a class="text-sm btn btn-link p-0" routerLink="/signup" >注册</a></p>
+    <a class="btn btn-link text-sm my-0" routerLink="/forgot-password" >忘记密码？</a>
   </div>
 </div>
