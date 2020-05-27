@@ -1,7 +1,7 @@
 version: '3'
 services:
   traduora:
-    image: traduora/traduora:latest
+    image: sou1a/traduora:latest
     ports:
      - "8080:8080"
     environment:
